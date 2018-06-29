@@ -16,8 +16,8 @@ class App extends React.Component {
     return (
       <div>
         <Header/>
-        <Footer/>
         <Body/>
+        <Footer/>
       </div>
     );
   }

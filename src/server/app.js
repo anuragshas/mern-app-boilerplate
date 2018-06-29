@@ -4,6 +4,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import path from 'path';
+import createError from 'http-errors';
 
 import productRoutes from './routes/products';
 import orderRoutes from './routes/orders';
@@ -41,8 +42,7 @@ app.use(API_URI+'/orders',orderRoutes);
 
 //handle not found
 app.use((req,res,next)=> {
-    const error = new Error('Not Found');
-    error.status = 404;
+    const error = createError(404,'Not Found');
     next(error);
 });
 
