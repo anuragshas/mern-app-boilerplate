@@ -1,8 +1,7 @@
 // Node.JS
-import React,{Component} from 'react';
-  
-class Header extends Component {
+import React, { Component } from 'react';
 
+class Header extends Component {
   render() {
     return (
       <div>
@@ -10,6 +9,6 @@ class Header extends Component {
       </div>
     );
   }
-};
+}
 
 export default Header;
