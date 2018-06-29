@@ -11,7 +11,7 @@ COPY package.json /app
 RUN npm install
 COPY . ${DIR} 
 RUN chmod +x boot.sh
- 
+
 
 EXPOSE 8080
 ENTRYPOINT [ "./boot.sh" ]
