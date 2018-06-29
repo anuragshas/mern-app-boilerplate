@@ -1,6 +1,11 @@
 // NodeJS
 const path = require('path');
 const webpack = require('webpack');
+const dotenv = require('dotenv');
+const config = dotenv.config();
+if(config.error){
+  dotenv.config({ path: '.env.default'});
+}
 
 // Webpack plugins
 const HtmlWebPackPlugin = require("html-webpack-plugin");
@@ -78,7 +83,7 @@ module.exports = {
     devServer: {
       proxy: { 
         // proxy URLs to backend development server
-        '/api': 'http://localhost:3000'
+        '/api': process.env.APP_URL
       },
       contentBase: paths.contentBase,  
       compress: true, // enable gzip compression
@@ -88,7 +93,7 @@ module.exports = {
       host: '0.0.0.0', // listen on all interfaces
       https: false, // true for self-signed, object for cert authority
       noInfo: false, // only errors & warns on hot reload  
-      port: 8000, 
+      port: process.env.CLIENT_PORT, 
     }, 
     // advance misc config 
     cache: false,
