@@ -37,6 +37,6 @@ We currently use babel configured with preset-env, preset-react and preset-stage
 
 - npm start
 - npm run dev
-- npm run upgradeDeps
+- npm run dev-server
 - npm run build
 - npm test
